@@ -17,7 +17,7 @@ Sistema completo de autenticação desenvolvido em Python com interface gráfica
 ### Método 1: Executar código fonte
 ```bash
 # Clone o repositório
-git clone https://github.com/seuusuario/sistema-login.git
+git clone https://github.com/godkaue4/sistema-de-login.git
 
 # Entre na pasta
 cd sistema-login
