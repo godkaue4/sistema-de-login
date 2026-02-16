@@ -71,5 +71,5 @@ class banco_de_dados():
       if self.verificar_senha(senha,senha_hash_banco):
          return True,'login feito com sucesso'
       else:
-         return False,'senha incorreta'
+         return False,'senha ou usuario incorreto'
        

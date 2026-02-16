@@ -32,10 +32,6 @@ class tela_de_login():
         self.iniciar()
 
     def config_interface(self):
-        try:
-            self.janela.iconbitmap('assets\logo1.ico')
-        except:
-            print('icone nao encontrado iniciando sem.....')
         self.janela.resizable(False,False)
         self.janela.title('system login')
         self.janela.geometry('300x400')
@@ -113,14 +109,16 @@ class tela_de_login():
         sucesso, mensagem=self.banco.verificar_login(usuario,senha)
         if not usuario or not senha:
                 messagebox.showwarning('ATENÇÂO!','complete todos os campos pedidos')
-        elif len(usuario) <3:
-                messagebox.showinfo('INfO','O USUARIO DEVE TER NO MINIMO 3 CARACTERE!')
-        if len(senha)<3:
-                messagebox.showinfo('INFO','A SENHA DEVE TER NO MINIMO 3 CARACTERE!')
+                return 
+        elif len(usuario) <3 or len(senha)<3:
+                messagebox.showinfo('INfO','O USUARIO E SENHA  DEVE TER NO MINIMO 3 CARACTERE!')
+                return
         if sucesso:
              messagebox.showinfo('INFO','login realizado com sucesso')
+             return
         if mensagem:
              messagebox.showinfo('INFO',mensagem)
+             return
     def iniciar(self):
         self.janela.mainloop()
     def cadastro(self):
@@ -179,7 +177,7 @@ class tela_de_login():
                      messagebox.showinfo('INFO',f'usuario {usuario} cadastrado com sucesso')
                      self.voltar_para_login()   
                 if mensagem:
-                     messagebox.showeinfo('INFO',mensagem)
+                     messagebox.showinfo('INFO',mensagem)
         frame_cadastrar=tk.Frame(self.frame_principal,bg='#65AEF7')
         frame_cadastrar.pack(pady=30)
         cadastro_botao=tk.Button(frame_cadastrar,
