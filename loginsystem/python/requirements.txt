@@ -1,0 +1,6 @@
+# Dependências do Sistema de Login
+# Python 3.x já inclui tudo necessário
+# Nenhum pacote extra necessário!
+
+# Para desenvolvimento:
+# pip install pyinstaller  # Para criar executável
